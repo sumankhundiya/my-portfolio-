@@ -31,13 +31,14 @@
                         </p>
                         
                         <div class="space-y-6">
+
                             <div class="flex items-center">
                                 <div class="mr-4 text-pink-500 text-xl">
                                     <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-[18px] font-bold text-white">Email</h4>
-                                    <a href="mailto:sumankhundiya75@gmail.com" class="text-[18px] text-gray-400">sumankhundiya75@gmail.com</a>
+                                    <a href="mailto:{{ $contact->email }}" class="text-[18px] text-gray-400">{{$contact->email}}</a>
                                 </div>
                             </div>
                             
@@ -47,7 +48,7 @@
                                 </div>
                                 <div>
                                     <h4 class="text-[18px] font-bold text-white">Phone</h4>
-                                    <a href="tel:+91 8570883649" class="text-[18px] text-gray-400">+91 8570883649</a>
+                                    <a href="tel:+91 {{ $contact-> number}}" class="text-[18px] text-gray-400">+91 {{ $contact->number }}</a>
                                 </div>
                             </div>
                             
@@ -57,7 +58,7 @@
                                 </div>
                                 <div>
                                     <h4 class="text-[18px] font-bold text-white">Location</h4>
-                                    <a href="https://www.google.com/maps?q=Hansi,Haryana" target="_blank" class="text-[18px] text-gray-400">Haryana Hissar, Hansi</a>
+                                    <a href="https://www.google.com/maps?q={{ $contact->location }}" target="_blank" class="text-[18px] text-gray-400">{{ $contact->location }}</a>
                                 </div>
                             </div>
                         </div>

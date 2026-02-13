@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Admin extends Model
 {
-    protected $table="projects";
+     protected $table="admin";
      public $timestamps = false;
 }

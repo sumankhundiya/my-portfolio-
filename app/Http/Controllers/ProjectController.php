@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Project;
-use App\Models\Work;
+use App\Models\Home;
+use App\Models\About;
+use App\Models\Skill;
+use App\Models\Contact;
 
 use Illuminate\Http\Request;
 
@@ -12,8 +15,12 @@ class ProjectController extends Controller
 {
      function show(){
         $records = Project::all();
-         $data = Work::all();
-        return view('home', ['records' => $records,'data' => $data]);
+        $profile = Home::first();
+        $about = About::first();
+        $skill = Skill::all();
+        $contact = Contact::first();
+        //  $data = Work::all();
+        return view('home', ['records' => $records,'profile'=> $profile,'about' => $about,'skill' => $skill,'contact' => $contact]);
      }
 
 

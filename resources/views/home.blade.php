@@ -13,14 +13,8 @@
 
 
     <style>
-        :root {
-            --primary-color: black;
-            --secondary-color: white;
-        }
-
-        .first {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
+      *{
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -54,7 +48,6 @@
                     <a href="#home" class="hover:text-purple-400 cursor-pointer">Home</a>
                     <a href="#about" class="hover:text-purple-400 cursor-pointer">About Me</a>
                     <a href="#project" class="hover:text-purple-400 cursor-pointer">Projects</a>
-                    <a href="#work" class="hover:text-purple-400 cursor-pointer">Work</a>
                     <a href="#contact" class="hover:text-purple-400 cursor-pointer">Contact</a>
                 </ul>
             </nav>
@@ -71,21 +64,19 @@
      <section id="home" class="px-4 sm:px-6 md:px-8">
              <div class="flex flex-col justify-center items-center my-4 md:my-6">
                 <div class="w-full sm:w-2/3 md:w-1/2 flex justify-center">
-                    <img src="{{ asset('images/photo.jpg') }}" alt="profile"
+                    <img src="{{ asset('images/' . $profile->image) }}" alt="profile"
                         class="rounded-[50%] shadow-lg w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 object-cover">
                 </div>
 
                 <div class="text-center w-full max-w-[90%] sm:max-w-[85%] md:max-w-[1000px] mt-6 md:mt-8">
                     <h1 style="font-family: 'Outfit';"
                         class="text-[32px] sm:text-[48px] md:text-[60px] lg:text-[70px] font-bold text-[#B415FF] leading-[120%]  px-2">
-                        I'm Suman Khundiya,<br class="sm:hidden"><span class="text-white"> PHP Web Developer based in
-                            India.</span>
+                        I'm {{$profile->name}},<br class="sm:hidden"><span class="text-white"> {{$profile->title}}</span>
                     </h1>
 
                     <h3
                         class="text-white text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[120%] my-2 md:my-6 max-w-[95%] sm:max-w-[800px] mx-auto text-center tracking-[0.5px] px-2">
-                        I am a PHP Web Developer from Hisar Haryana, India with intern as a PHP Developer in Innovative
-                        Coding Campus.
+                        {{$profile->description}}
                     </h3>
 
                     <div class="flex flex-col sm:flex-row my-6 md:my-8 gap-4 justify-center">
@@ -105,8 +96,6 @@
    @include ('about')
 
     @include('project')
-
-    @include('work',['data' => $data])
 
     @include('contact')
 
